@@ -1,10 +1,8 @@
 package main
 
-import "github.com/konart/leetcode/gfg/structs"
+import . "github.com/konart/leetcode/gfg/practice"
 
 func main() {
-	list := &structs.LinkedList{}
-	node := &structs.Node{1, nil}
-	list.SetHead(node)
-
+	LinkedListTraversal()
+	LinkedListInsert()
 }
