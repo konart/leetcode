@@ -82,6 +82,9 @@ func TestLinkedList_Destroy(t *testing.T) {
 			if e.Next != nil {
 				t.Errorf("Test case %d: expected: Next == nil", c+1)
 			}
+			if e.Data != 0 {
+				t.Errorf("Test case %d: expected: Data == 0, got %d instead", c+1, e.Data)
+			}
 		}
 	}
 }

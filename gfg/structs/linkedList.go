@@ -191,5 +191,11 @@ func (list *LinkedList) Swap(i, j int) {
 }
 
 func (list *LinkedList) Destroy() {
-
+	node := list.head
+	for node != nil {
+		next := node.Next
+		node.Next = nil
+		node.Data = 0
+		node = next
+	}
 }
