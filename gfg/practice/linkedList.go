@@ -33,3 +33,30 @@ func LinkedListInsert() {
 	x := 33
 	fmt.Printf("Number %d is %t", x, list.Search(x))
 }
+
+func CompareLists(a,b *LinkedList) int {
+	if a.Length() > b.Length() {
+		return 1
+	} else if a.Length() < b.Length() {
+		return -1
+	}
+	nodeA := a.GetHead()
+	nodeB := b.GetHead()
+	for nodeA != nil {
+		if nodeA.Data > nodeB.Data {
+			return 1
+		} else if nodeA.Data < nodeB.Data {
+			return -1
+		}
+		nodeA = nodeA.Next
+		nodeB = nodeB.Next
+	}
+	return 0
+}
+
+func AddTwoNumbers(a,b *LinkedList) (*LinkedList, error) {
+	sumList := &LinkedList{}
+
+
+	return sumList, nil
+}
