@@ -2,6 +2,7 @@ package structs
 
 import (
 	"fmt"
+	"strconv"
 )
 
 type Node struct {
@@ -16,6 +17,16 @@ type LinkedList struct {
 
 func (list LinkedList) Length() int {
 	return list.length
+}
+
+func (list LinkedList) String() string {
+	node := list.head
+	var str string
+	for node !=nil {
+		str += strconv.Itoa(node.Data)
+		node = node.Next
+	}
+	return str
 }
 
 func GenerateFromSlice(s []int) *LinkedList {
