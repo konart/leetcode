@@ -23,7 +23,7 @@ func TestAddTwoNumbers(t *testing.T) {
 			t.Fatalf("Adding two number returned an error: %s", err)
 		}
 		if CompareLists(result, tc.sum) != 0 {
-			t.Errorf("Test case %d: expectd %v, got %v instead", c, tc.sum, result)
+			t.Errorf("Test case %d: expected %s, got %s instead", c, tc.sum, result)
 		}
 	}
 }
@@ -44,6 +44,10 @@ func TestCompareLists(t *testing.T) {
 		{GenerateFromSlice([]int{5,6,1,1}),
 			GenerateFromSlice([]int{5,6,3}),
 			1,
+		},
+		{GenerateFromSlice([]int{5,6,3}),
+			GenerateFromSlice([]int{5,6,1,1}),
+			-1,
 		},
 		{GenerateFromSlice([]int{5,6,3}),
 			GenerateFromSlice([]int{5,6,3}),
